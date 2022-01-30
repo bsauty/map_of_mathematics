@@ -110,7 +110,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <div id="tree-button-container">
-              <button class="btn btn-secondary active" onclick="showTree('test')" data-tree-section="time">Mathematics</button>
+              <button class="btn btn-secondary active" onclick="showTree('test')" data-tree-section="time">Dummy</button>
               <button class="btn btn-secondary" onclick="showTree('num')" data-tree-section="num">Numeric</button>
               <button class="btn btn-secondary" onclick="showTree('cat')" data-tree-section="cat">Categoric</button>
               <button class="btn btn-secondary" onclick="showTree('catnum')" data-tree-section="catnum">Num & Cat</button>
@@ -161,9 +161,9 @@
 
 <!-- Skip a line before the trees -->
 
-<!-- Mathematics tree -->
+<!-- Dummy tree -->
 
-<div id="mathematics" class="tree" style="text-align:center;">
+<div id="dummy" class="tree" style="text-align:center;">
 
   <script type="text/javascript" src="tree_factory.js"></script>
   <script type="text/javascript" src="dummy_tree.js"></script>
@@ -1785,106 +1785,6 @@
 
 
 
-<!-- ======================== STORY SECTION ================================ -->
-
-
-    <section class="" id="story" style="background-color:#69b3a2; padding: 0px 0; padding-top: 0px">
-    <div class="parallaxstory">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-2 text-center"></div>
-          <div class="col-lg-8 text-center">
-            <br><br><br><br><br>
-            <h2 class="section-heading text-uppercase" >Data Story</h2>
-            <p>From Data to Viz provides a decision tree based on input data format. This tree leads to twenty formats representing the most common dataset types. For each, an example of analysis based on real-life data is provided using the <a href="https://www.r-graph-gallery.com">R programming language</a>.</p>
-            <br>
-            <div class="btn-group">
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Numeric</button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="story/OneNum.html">Rbnb night prices on the french riviera</a>
-                  <a class="dropdown-item" href="story/TwoNum.html">Price / area relationship of 1500 apartments</a>
-                  <a class="dropdown-item" href="story/TwoNumOrdered.html">Evolution of the bitcoin price</a>
-                  <a class="dropdown-item" href="story/ThreeNum.html">Relationship between life expectancy, gdp per capita and population</a>
-                  <a class="dropdown-item" href="story/OneCatSevOrderedNum.html">Evolution of baby names in the US since 1880</a>
-                  <a class="dropdown-item" href="story/SeveralNum.html">Features of 32 famous car models</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Categoric</button>
-                <div class="dropdown-menu">
-                      <a class="dropdown-item" href="story/OneNumOneCat.html">Who sells more weapons?</a>
-                      <a class="dropdown-item" href="story/SeveralIndepLists.html">Comparing the lyrics of 3 french rappers</a>
-                      <a class="dropdown-item" href="story/SevCatOneNumNestedOneObsPerGroup.html">Repartition of the world population</a>
-                      <a class="dropdown-item" href="story/OneNumSevCatSubgroupOneObsPerGroup.html">The gender wage gap</a>
-                      <a class="dropdown-item" href="story/AdjacencyMatrix.html">Co-autorship network | migration flows</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Num & Cat</button>
-                <div class="dropdown-menu">
-                      <a class="dropdown-item" href="story/OneNumOneCat.html">Who sells more weapons?</a>
-                      <a class="dropdown-item" href="story/OneNumOneCatSeveralObs.html">How people perceive probability vocabulary</a>
-                      <a class="dropdown-item" href="story/SeveralNum.html">Features of 32 famous car models</a>
-                      <a class="dropdown-item" href="story/OneCatSevOrderedNum.html">Evolution of baby names in the US since 1880</a>
-                      <a class="dropdown-item" href="story/OneNumSevCatSubgroupOneObsPerGroup.html">The gender wage gap</a>
-                      <a class="dropdown-item" href="story/OneNumSevCatSubgroupSevObsPerGroup.html">How much do people tip?</a>
-                      <a class="dropdown-item" href="story/SevCatOneNumNestedOneObsPerGroup.html">Repartition of the world population</a>
-                      <a class="dropdown-item" href="">-</a>
-                      <a class="dropdown-item" href="story/AdjacencyMatrix.html">Co-autorship network | migration flows</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Maps</button>
-                <div class="dropdown-menu">
-                      <a class="dropdown-item" href="story/GPSCoordWithoutValue.html">Where surfers live</a>
-                      <a class="dropdown-item" href="story/GPSCoordWithValue.html">The population of 1000 cities in the UK</a>
-                      <a class="dropdown-item" href="story/MapConnection.html">Where surfers travel</a>
-                      <a class="dropdown-item" href="graph/choropleth.html">Distribution of restaurants in the south of France</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Network</button>
-                <div class="dropdown-menu">
-                      <a class="dropdown-item" href="story/AdjacencyMatrix.html">Co-autorship network | migration flows</a>
-                      <a class="dropdown-item" href="story/SevCatOneNumNestedOneObsPerGroup.html">Repartition of the world population</a>
-                      <a class="dropdown-item" href="">-</a>
-                      <a class="dropdown-item" href="graph/edge_bundling.html">Connection between informatic components</a>
-                </div>
-              </div>
-            </div>
-
-
-
-            <br><br><br><br>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </section>
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- ======================== PORTFOLIO SECTION ============================ -->
@@ -2406,239 +2306,6 @@
 
 
 
-<!-- =========================== CAVEAT SECTION ============================ -->
-
-
-    <section id="caveats">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Caveats</h2>
-            <h3 class="section-subheading text-muted">The best way to visualize data efficiently is probably to avoid the most common mistakes.<br><br>From Data to Viz offers you a <a href="caveats.html">gallery of common caveats.</a></h3>
-          </div>
-        </div>
-
-
-
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-
-              <div class="carousel-item active">
-                <div class="row">
-
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/order_data.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/order_data.png">
-                      <p class="mytitlerelated">Order your data</p>
-                      <p class="mytextrelated">When displaying the value of several entities, ordering it makes it way more insightful.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/cut_y_axis.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/cut_y_axis.png">
-                      <p class="mytitlerelated">To cut or not to cut?</p>
-                      <p class="mytextrelated">Cutting the Y axis is one of the most controversial practices in data viz. See why.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/spaghetti.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/spaghetti.png">
-                      <p class="mytitlerelated">The spaghetti chart</p>
-                      <p class="mytextrelated">A line graph with too many lines becomes unreadable: it is called a spaghetti graph.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/pie.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/pie.png">
-                      <p class="mytitlerelated">Pie chart</p>
-                      <p class="mytextrelated">The human eye is bad at reading angles. See how to replace the most criticized chart ever.</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/bin_size.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/bin_size.png">
-                      <p class="mytitlerelated">Play with histogram bin size</p>
-                      <p class="mytextrelated">Always try different bin sizes when you build an histogram, it can lead to different insights.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/boxplot.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/boxplot.png">
-                      <p class="mytitlerelated">Do boxplots hide information?</p>
-                      <p class="mytextrelated">A boxplot is a great way to summarize a distribution but it hides the sample size and data distribution.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/error_bar.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/error_bar.png">
-                      <p class="mytitlerelated">The problem with error bars</p>
-                      <p class="mytextrelated">Barplots with error bars must be used with great care. Learn why and how to replace them.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/multi_distribution.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/multi_distribution.png">
-                      <p class="mytitlerelated">Too many distributions</p>
-                      <p class="mytextrelated">If you need to compare the distribution of many variables, don't clutter your graph.</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/overplotting.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/overplotting.png">
-                      <p class="mytitlerelated">Overplotting</p>
-                      <p class="mytextrelated">Too many points on your scatter plot makes it unreadable? Techniques exist to avoid overplotting.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/rainbow.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/rainbow.png">
-                      <p class="mytitlerelated">The rainbow color palette</p>
-                      <p class="mytextrelated">Avoid the rainbow color palette when you map a numeric variable. So many better palettes exist.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/small_multiple.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/small_multiple.png">
-                      <p class="mytitlerelated">Faceting: horizontal or vertical?</p>
-                      <p class="mytextrelated">Placing individual plots horizontally or vertically is an important choice to make.</p>
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
-                    <a href="caveat/counter_intuitive.html" class="btn btn-primary mybtnrelated" style="margin-bottom:4px;white-space: normal !important;">
-                      <img  src="img/mistake/counter_intuitive.png">
-                      <p class="mytitlerelated">Don't be counter intuitive</p>
-                      <p class="mytextrelated">Your audience is used to a few dataviz standards. Not respecting it can mislead them.</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-
-        </div>
-        <br>
-        <div style="text-align:center"><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="caveats.html">See the collection</a></div>
-
-      </section>
-
-
-<!-- ======================================================================= -->
-
-
-
-
-
-
-
-
-
-<!-- ============================= POSTER SECTION ========================== -->
-
-
-<!-- Croping image: the goal is to have a 800 x 400 -->
-<!-- Change image size o have heght = 400: convert poster_small.png -resize 800x400 poster_xsmall.png -->
-<!-- Add white space on the side to have the good size: convert -size 800x400 xc:white poster_xsmall.png  -gravity center -composite output.png -->
-<!-- OR Crop images with convert alisasinger.jpg -crop 1000x350+50+10  titi.png -->
-
-  <!-- see https://www.w3schools.com/howto/howto_js_slideshow.asp for carousel -->
-    <section id="poster" class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Poster</h2>
-            <h3 class="section-subheading text-muted">The 'Data to Viz' project is available in a high quality printed poster. See our <a href="poster.html">online shop</a> to support the project.</h3>
-          </div>
-        </div>
-        <div class="slideshow-container">
-          <div class="mySlides">
-            <img src="img/poster/poster_mockup_croped.jpg" style="width:100%">
-          </div>
-          <div class="mySlides">
-            <a data-toggle="modal" href="#poster_full"><img src="img/poster/poster_800_400.png" style="width:100%"></a>
-          </div>
-          <div class="mySlides">
-            <img src="img/poster/poster_zoom_800_400.png" style="width:100%">
-          </div>
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-        <br>
-        <div style="text-align:center">
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="poster.html">Buy a poster</a>
-          <a class="btn btn-primary btn-xl text-uppercase" data-toggle="modal" href="#poster_full">See it full screen</a>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-    <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-    }
-    </script>
-
-
-<!-- ======================================================================= -->
-
-
-
-
-
-
-
-
 <!-- ========================== ABOUT SECTION ============================== -->
 
     <section  id="about">
@@ -2646,7 +2313,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-uppercase">About the project</h2>
-            <p class="large text-muted">‘From Data to Viz’ is a classification of chart types based on input data format. It comes in the form of a decision tree leading to a set of potentially appropriate visualizations to represent your dataset. <a href="about.html">Read more</a>.</p>
+            <p class="large text-muted">TBBOM is a classification of maths domains <a href="about.html">Read more</a>.</p>
           </div>
           <div class="col-lg-10 mx-auto text-center">
              <div style="text-align:center">
@@ -2658,60 +2325,8 @@
           </div>
           <div class="col-lg-8 mx-auto text-center">
             <br>
-            <p class="large text-muted">This website has been developed by two friends from the south of France in their spare time. Feel free to <a href="#contact">drop us a word</a> if the project helped you or for any feedback. Or even better, hire us!</p>
+            <p class="large text-muted">This website has been developed by blablabla in their spare time. Feel free to <a href="#contact">drop us a word</a> if the project helped you or for any feedback.  All code is open-source and contributions are more than welcome.</p>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <a href="https://www.linkedin.com/in/yan-holtz-2477534a/"><img class="mx-auto rounded-circle" src="img/team/YH_pic_square.png" alt=""></a>
-              <a href="https://www.linkedin.com/in/yan-holtz-2477534a/"><h4>Yan Holtz</h4></a>
-              <p class="text-muted">Data analyst</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="https://twitter.com/R_Graph_Gallery">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://github.com/holtzy">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/yan-holtz-2477534a/">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <a href="http://www.conor.fr"><img class="mx-auto rounded-circle" src="img/team/ConorHealy.jpg" alt=""></a>
-              <a href="http://www.conor.fr"><h4>Conor Healy</h4></a>
-              <p class="text-muted">Designer</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="http://www.conor.fr/indexEN.html">
-                    <i class="fa fa-home"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="http://www.conor.fr/indexEN.html">
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/conor-healy-b0299810a/">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-1"></div>
         </div>
       </div>
     </section>
@@ -2735,10 +2350,9 @@
          <div class="col-lg-8 text-center">
            <br><br><br>
            <h2 class="section-heading text-uppercase" style="color: black">Contact</h2>
-           <p>From Data to Viz is currently in beta version and any feedback is highly encouraged. You can open an issue on <a href="https://github.com/holtzy/data_to_viz">Github</a>, drop us a message on <a href="https://twitter.com/R_Graph_Gallery">Twitter</a>, or send us an email at <a href="mailto:yan.holtz.data@gmail.com">yan.holtz.data@gmail.com</a>.</p>
+           <p>TBBOM is currently in beta version and any feedback is highly encouraged. You can open an issue on <a href="https://github.com/bsauty/map_of_mathematics">Github</a> or send us an email at <a href="mailto:nono.sdc@hotmail.fr">nono.sdc@hotmail.fr</a>.</p>
            <div style="text-align:center">
-              <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="https://github.com/holtzy/data_to_viz">Github</a>
-              <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="https://twitter.com/R_Graph_Gallery">Twitter</a>
+              <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="https://github.com/bsauty/map_of_mathematics">Github</a>
             </div>
 
          </div>
@@ -4677,7 +4291,7 @@ by the Y axis, and one by the dot size.</p>
 
     <!-- By default, show the numeric tree -->
     <script>
-      showTree('mathematics');
+      showTree('dummy');
     </script>
 
     <!-- Activate the bootstrap tooltip, must be after jQuery load -->

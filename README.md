@@ -18,4 +18,4 @@ Later
 - [ ] Fill the tree.js for each domain to get the diagramm right
 - [ ] Fill the modal page for each node
 - [ ] Fill the full page for each node
- 
+- [ ] Find nice visuals for the nodes of the tree -> probably very hard to do but high gain in terms of interface
