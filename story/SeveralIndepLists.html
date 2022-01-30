@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+
+
+
+
+<style>
+.myheader {
+  background-image: url("https://github.com/holtzy/data_to_viz/raw/master/img/overview_RGG_faded.png");
+    min-height: 350px; 
+    background-size: 100% 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  
+    height: 100%; 
+    width: 100% !important;
+  }
+.mytitle{
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+  font-size: 200%;
+  font-weight: 500;
+  letter-spacing: 4px;
+  }   
+</style>
+
+<div class="myheader" style="text-align: center;">
+  <br>
+  <a href="http://www.data-to-viz.com"><img align="left" src="https://github.com/holtzy/data_to_viz/raw/master/img/logo/typo.png" style="width:150px; vertical-align: top; margin-left: 5%;"></a>
+  <br><br>
+  <br><br>
+  <p class="mytitle">Comparing raper lyrics</p>
+  <center><div class='mysubtitle'>
+    <i>A few data analytics ideas from <a href="www.data-to-viz.com">Data-to-Viz.com</a></i>
+  </div></center>
+  <br><br>
+
+    <a href="https://www.data-to-viz.com/#portfolioanchor"> <img class="mylogoheader" src=https://github.com/holtzy/data_to_viz/raw/master/img/section/VennSmall.png></a>
+  
+    <a href="https://www.data-to-viz.com/#portfolioanchor"> <img class="mylogoheader"  src=https://github.com/holtzy/data_to_viz/raw/master/img/section/LollipopSmall.png></a>
+  
+    <a href="https://www.data-to-viz.com/#portfolioanchor"> <img class="mylogoheader"  src=https://github.com/holtzy/data_to_viz/raw/master/img/section/WordCloudSmall.png></a>
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+
+<title></title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<script src="libs/navigation-1.1/codefolding.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/htmlwidgets-1.2.1/htmlwidgets.js"></script>
+<link href="libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
+<script src="libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+<script src="libs/wordcloud2-0.0.1/hover.js"></script>
+<script src="libs/wordcloud2-binding-0.2.1/wordcloud2.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+div.sourceCode {
+  overflow-x: visible;
+}
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+<br><br><br><br>
+<div class="mycontent">
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-6">
+<p>This document gives a few suggestions to analyse a dataset composed by a few lists of items.<br><br>It considers the lyrics of 2 famous french rapers (<a href="https://en.wikipedia.org/wiki/Nekfeu">Nekfeu</a> and <a href="https://en.wikipedia.org/wiki/Booba">Booba</a>) and a french singer (<a href="https://en.wikipedia.org/wiki/Georges_Brassens">Georges Brassens</a>).<br><br>This example dataset has been downloaded from the <a href="https://www.paroles.net/">Paroles.net website</a> using a custom script and is available on this <a href="https://github.com/holtzy/data_to_viz/tree/master/Example_dataset">Github repository</a>. Seventy five songs are considered.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Libraries</span>
+<span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(hrbrthemes)
+<span class="kw">library</span>(kableExtra)
+<span class="kw">library</span>(tm)
+<span class="kw">options</span>(<span class="dt">knitr.table.format =</span> <span class="st">&quot;html&quot;</span>)
+<span class="kw">library</span>(proustr)
+
+<span class="co"># Load dataset from github</span>
+data &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/14_SeveralIndepLists.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>) 
+to_remove &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;_|[0-9]|</span><span class="ch">\\</span><span class="st">.|function|^id|script|var|div|null|typeof|opts|if|^r$|undefined|false|loaded|true|settimeout|eval|else|artist&quot;</span>)
+data &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">grepl</span>(to_remove, word)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span>word <span class="op">%in%</span><span class="st"> </span><span class="kw">stopwords</span>(<span class="st">&#39;fr&#39;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span>word <span class="op">%in%</span><span class="st"> </span><span class="kw">proust_stopwords</span>()<span class="op">$</span>word)
+
+<span class="co"># show data</span>
+a &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;booba&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">booba=</span>word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(booba) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">6</span>)
+b &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;nekfeu&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">nekfeu=</span>word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(nekfeu) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">6</span>)
+c &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;georges-brassens&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">brassens=</span>word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(brassens) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dv">6</span>)</code></pre></div>
+</div>
+<div class="col-md-2">
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+booba
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+qu’ma
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sparrow
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lyrics
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+riche
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dé
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fasses
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="col-md-2">
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+nekfeu
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+j’suis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+souffres
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+seum
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tuerait
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+l’bois
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+d’un
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="col-md-2">
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+brassens
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+brassens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+d’avoir
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+d’hélène
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+l’pornographe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+georges
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sète
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="wordcloud" class="section level1">
+<h1>Wordcloud</h1>
+<hr />
+<p>If some words are repeated in the dataset, the first thing to do is probably to find out what are the most frequent ones. A common way to do so is to build a <a href="https://www.data-to-viz.com/graph/wordcloud.html">wordcloud</a>: each word is written with a size proportionnal to its frequency.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The wordcloud 2 library is the best option for wordcloud in R</span>
+<span class="kw">library</span>(wordcloud2)
+
+<span class="co"># prepare a list of word (50 most frequent)</span>
+mywords &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;nekfeu&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(word) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">freq=</span><span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(freq) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">tail</span>(<span class="dv">50</span>)
+
+<span class="co"># Make the plot</span>
+<span class="kw">wordcloud2</span>(mywords, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">minRotation =</span> <span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>, <span class="dt">maxRotation =</span> <span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>,
+         <span class="dt">backgroundColor =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">color=</span><span class="st">&quot;#69b3a2&quot;</span>)</code></pre></div>
+<div id="htmlwidget-15aeddcbe6404fa420cb" style="width:672px;height:576px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15aeddcbe6404fa420cb">{"x":{"word":["années","d'où","dure","équipe","faut","faux","feel","j'étais","juge","mettre","ossature","reufs","sors","t'as","vie","when","cyborg","douceur","frères","hey","know","vrais","noir","sais","tue","mère","veux","anneaux","ezflaun","planète","tuerait","d'un","homme","ouais","qu'on","saturne","tour","above","complete","faire","lyrics","showads","song","be","calling","i'll","j'ai","c'est","you","nekfeu"],"freq":[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,7,7,8,8,8,8,9,9,9,9,9,9,10,10,10,10,10,10,11,11,11,12,14,17,25],"fontFamily":"Segoe UI","fontWeight":"bold","color":"#69b3a2","minSize":0,"weightFactor":14.4,"backgroundColor":"white","gridSize":0,"minRotation":-1.5707963267949,"maxRotation":-1.5707963267949,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+<p>However this type of chart can be <a href="https://www.data-to-viz.com/graph/wordcloud.html">criticized</a> since it does not reflect frequencies accurately: long words appear bigger and comparing size is always complicated. Thus, the techniques seen in <a href="https://www.data-to-viz.com/story/OneNumOneCat.html">this page</a> are strongly advised, and my best choice goes to the lollipop chart.</p>
+</div>
+<div id="lollipop-chart" class="section level1">
+<h1>Lollipop chart</h1>
+<hr />
+<p>A <a href="https://www.data-to-viz.com/graph/lollipop.html">lollipop</a> chart is like a <a href="https://www.data-to-viz.com/graph/barplot.html">barplot</a>, but the bar is replaced by a segment and a circle. It gives a lighter appearance. It is advised to use a horizontal version: words are easier to read.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;nekfeu&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(word) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(n) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word=</span><span class="kw">factor</span>(word, word)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">tail</span>(<span class="dv">10</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>( <span class="kw">aes</span>(word, <span class="dt">y=</span>n)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_segment</span>( <span class="kw">aes</span>(<span class="dt">x=</span>word ,<span class="dt">xend=</span>word, <span class="dt">y=</span><span class="dv">0</span>, <span class="dt">yend=</span>n), <span class="dt">color=</span><span class="st">&quot;grey&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">3</span>, <span class="dt">color=</span><span class="st">&quot;#69b3a2&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">coord_flip</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_ipsum</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;10 most frequent words used by Nekfeu&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>(
+      <span class="dt">panel.grid.minor.y =</span> <span class="kw">element_blank</span>(),
+      <span class="dt">panel.grid.major.y =</span> <span class="kw">element_blank</span>(),
+      <span class="dt">legend.position=</span><span class="st">&quot;none&quot;</span>
+    ) <span class="op">+</span>
+<span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>)</code></pre></div>
+<p><img src="SeveralIndepLists_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="venn-diagram" class="section level1">
+<h1>Venn diagram</h1>
+<hr />
+<p>Once the most frequent words are known, it is of interest to know how many words are common to every lists, and how many are specific to each artist. The best way to represent this information is to use a <a href="https://www.data-to-viz.com/graph/venn.html">venn diagram</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#upload library</span>
+<span class="kw">library</span>(VennDiagram)
+ 
+<span class="co">#Make the plot</span>
+<span class="kw">venn.diagram</span>(
+  <span class="dt">x =</span> <span class="kw">list</span>(
+    data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;booba&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unlist</span>() , 
+    data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;nekfeu&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unlist</span>() , 
+    data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(artist<span class="op">==</span><span class="st">&quot;georges-brassens&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unlist</span>()
+    ),
+  <span class="dt">category.names =</span> <span class="kw">c</span>(<span class="st">&quot;Booba&quot;</span> , <span class="st">&quot;Nekfeu&quot;</span> , <span class="st">&quot;Brassens&quot;</span>),
+  <span class="dt">filename =</span> <span class="st">&#39;venn.png&#39;</span>,
+  <span class="dt">output =</span> <span class="ot">TRUE</span> ,
+          <span class="dt">imagetype=</span><span class="st">&quot;png&quot;</span> ,
+          <span class="dt">height =</span> <span class="dv">480</span> , 
+          <span class="dt">width =</span> <span class="dv">480</span> , 
+          <span class="dt">resolution =</span> <span class="dv">300</span>,
+          <span class="dt">compression =</span> <span class="st">&quot;lzw&quot;</span>,
+          <span class="dt">lwd =</span> <span class="dv">1</span>,
+          <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;#440154ff&quot;</span>, <span class="st">&#39;#21908dff&#39;</span>, <span class="st">&#39;#fde725ff&#39;</span>),
+          <span class="dt">fill =</span> <span class="kw">c</span>(<span class="kw">alpha</span>(<span class="st">&quot;#440154ff&quot;</span>,<span class="fl">0.3</span>), <span class="kw">alpha</span>(<span class="st">&#39;#21908dff&#39;</span>,<span class="fl">0.3</span>), <span class="kw">alpha</span>(<span class="st">&#39;#fde725ff&#39;</span>,<span class="fl">0.3</span>)),
+          <span class="dt">cex =</span> <span class="fl">0.5</span>,
+          <span class="dt">fontfamily =</span> <span class="st">&quot;sans&quot;</span>,
+          <span class="dt">cat.cex =</span> <span class="fl">0.6</span>,
+          <span class="dt">cat.default.pos =</span> <span class="st">&quot;outer&quot;</span>,
+          <span class="dt">cat.pos =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">27</span>, <span class="dv">27</span>, <span class="dv">135</span>),
+          <span class="dt">cat.dist =</span> <span class="kw">c</span>(<span class="fl">0.055</span>, <span class="fl">0.055</span>, <span class="fl">0.085</span>),
+          <span class="dt">cat.fontfamily =</span> <span class="st">&quot;sans&quot;</span>,
+          <span class="dt">cat.col =</span> <span class="kw">c</span>(<span class="st">&quot;#440154ff&quot;</span>, <span class="st">&#39;#21908dff&#39;</span>, <span class="st">&#39;#fde725ff&#39;</span>),
+          <span class="dt">rotation =</span> <span class="dv">1</span>
+        )</code></pre></div>
+<center>
+<img src="venn.png" />
+</center>
+</div>
+<div id="note" class="section level1">
+<h1>Note</h1>
+<hr />
+<p>This section needs improvements:</p>
+<ul>
+<li>introduction of upset plot</li>
+<li>same number of word per artist</li>
+<li>more ideas to come</li>
+</ul>
+</div>
+
+
+<!-- Insert code for related graphics  -->
+<h1>Going further</h1>
+<hr>
+<p>You can learn more about each type of graphic presented in this story in the dedicated sections. Click the icon below:</p>
+    <a href="https://www.data-to-viz.com/#portfolio"> <img class="mylogoheader" src=https://github.com/holtzy/data_to_viz/raw/master/img/section/VennSmall.png></a>
+  
+    <a href="https://www.data-to-viz.com/#portfolio"> <img class="mylogoheader"  src=https://github.com/holtzy/data_to_viz/raw/master/img/section/LollipopSmall.png></a>
+  
+    <a href="https://www.data-to-viz.com/#portfolio"> <img class="mylogoheader"  src=https://github.com/holtzy/data_to_viz/raw/master/img/section/WordCloudSmall.png></a>
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+<!-- Insert code for DISQUS comments  -->
+      <br>
+      <h1>Comments</h1>
+      <hr>
+      <p>Any thoughts on this? Found any mistake? Have another way to show the data? Please drop me a word on <a href="https://twitter.com/R_Graph_Gallery">Twitter</a> or in the comment section below:</p>
+      <br>
+      <div class="container">
+        <div id="disqus_thread"></div>
+        <script>
+
+        var disqus_config = function () {
+        this.page.url = www.data-to-viz.com/story/SeveralIndepLists.html;  
+        this.page.identifier = SeveralIndepLists; 
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://data-to-viz.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+<!-- Insert code for DISQUS comments  -->
+
+
+
+
+
+&nbsp;
+<hr />
+<p style="text-align: center;">A work by <a href="https://github.com/holtzy/">Yan Holtz</a> for <a href="https://data-to-viz.com">data-to-viz.com</a></p>
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+	<a href="https://twitter.com/r_graph_gallery?lang=en" class="fa fa-twitter"></a>
+	<a href="https://www.linkedin.com/in/yan-holtz-2477534a/" class="fa fa-linkedin"></a>
+	<a href="https://github.com/holtzy/" class="fa fa-github"></a>
+</p>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79254642-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79254642-3');
+</script>
+
+
+&nbsp;
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>
