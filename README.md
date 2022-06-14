@@ -7,8 +7,6 @@ The BIG-BOOK-OF-MATHEMATICS is a learning tool to get a better mental representa
 TODO
 -----
 
-Before February 15th
-
 - [ ] Find a coherent hierarchy for nodes in the tree, based on depth -> css file
 - [ ] Trim the garbage files and clean the ingnominous html hardcoded exports in index.html
 - [ ] Find a suitable presentation for both the modal page and the full page
